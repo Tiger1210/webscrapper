@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@200&display=swap');
+*{
+    font-family:  'Mukta', sans-serif; 
+}
+ul{
+    font-family:  'Mukta', sans-serif; 
+    font-size: 25px;
+}
+
+.header{
+    font-size: 40px;
+    text-decoration: underline;
+}
+
+h2{
+    font-size: 30px;
+    font-weight: 300px;
+}
+
+p{
+    font-size: 25px;
+}
+
+p.banned{
+    color: red;
+    font-weight: 600px;
+}
+
