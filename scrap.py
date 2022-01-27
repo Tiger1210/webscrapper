@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup
 
 ## This method will filter out any articles which are deemed inappropriate. If the header of the article contain any of the following words, they will be banned
 def moniter(text):
-    banned_words = ["partner","breast","boobs", "girlfriend","boyfriend", "bikini", "penis", "vagina", "sex", "prostitute", "hooker", "prostitution", "naked", "nude", "sexy", "underwear", "stripper", "porn", "WAGS", "wife"]
+    banned_words = ["breast","boobs", "girlfriend","boyfriend", "bikini", "penis", "vagina", "sex", "romance", "prostitute", "hooker", "prostitution", "naked", "nude", "sexy", "underwear", "stripper", "porn", "WAGS", "wife", "Wife"]
     verdict = "good"
     word = "Hi"
     for index in range(banned_words.__len__()):
@@ -77,6 +77,13 @@ for index in range(count):
             file.write("</li>")
             file.write('<br>\n')
         file.write('</ul>\n')
+
+        # The author who wrote the article will be printed
+        for author in soup_2.find_all("p", {"class": "author-section byline-plain"}):
+                file.write('<b>\n')
+                file.write(remove_non_ascii(author.text))
+                file.write('</b>\n')
+    
         # This prints out the story
         for body in soup_2.find_all("p", {"class": "mol-para-with-font"}):
             file.write('<p>\n')
